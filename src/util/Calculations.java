@@ -9,7 +9,7 @@ package util;
  *
  * @author S531749
  */
-public class Math {
+public class Calculations {
 
     /**
      * @param args the command line arguments
@@ -72,8 +72,7 @@ public class Math {
     }
     
     public static double distanceBetweenPoints(double x1, double y1, double x2, double y2){
-    //    return java.lang.Math.sqrt(java.lang.Math.pow((x2-x1), 2) + java.lang.Math.pow((y2-y1), 2));
-    return java.lang.Math.hypot(x2-x1,y2-y1);
+         return Math.hypot(x2-x1,y2-y1);
     }
 
 
