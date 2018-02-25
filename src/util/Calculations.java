@@ -5,6 +5,9 @@
  */
 package util;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  *
  * @author S531749
@@ -16,6 +19,10 @@ public class Calculations {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        double[] numbers = {15,3,3,4};
+        System.out.println(mean(numbers));
+        System.out.println(median(numbers));
+        System.out.println(range(numbers));
     }
     
     public static int[] simplifyFraction(int num, int denom) {
@@ -75,5 +82,40 @@ public class Calculations {
          return Math.hypot(x2-x1,y2-y1);
     }
 
-
+    public static double mean(double[] numbers){
+        double total = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            total += numbers[i]; 
+        }
+        return (total/numbers.length);
+    }
+    
+    public static double median(double[] numbers){
+        ArrayList<Double> nums = new ArrayList<Double>();
+        for (int i = 0; i < numbers.length; i++) {
+            nums.add(numbers[i]);
+        }
+        Collections.sort(nums);
+        int half = nums.size()/2;
+        if(nums.size()%2 == 0){
+            return (nums.get(half-1) + nums.get(half))/2;
+        }else{
+            return nums.get(half-1);
+        }
+    }
+    
+    public static double range(double[] numbers){
+        double max = Double.MIN_VALUE;
+        double min = Double.MAX_VALUE;
+        
+        for (int i = 0; i < numbers.length; i++) {
+            if(numbers[i] > max){
+                max = numbers[i];
+            }
+            if(numbers[i] < min){
+                min = numbers[i];
+            }
+        }
+        return max-min;
+    }
 }
