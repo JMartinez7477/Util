@@ -11,13 +11,13 @@ import java.util.ArrayList;
  *
  * @author S531749
  */
-public class Condition {
+public class RacingCondition {
     String name1;
     String condition;
     String name2;
     int position;
 
-    public Condition(String name1, String condition, String second) {
+    public RacingCondition(String name1, String condition, String second) {
         this.name1 = name1;
         this.condition = condition;
         if(condition.equalsIgnoreCase("BEAT")){
