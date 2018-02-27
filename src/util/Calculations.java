@@ -19,10 +19,6 @@ public class Calculations {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        double[] numbers = {15,3,3,4};
-        System.out.println(mean(numbers));
-        System.out.println(median(numbers));
-        System.out.println(range(numbers));
     }
     
     public static int[] simplifyFraction(int num, int denom) {

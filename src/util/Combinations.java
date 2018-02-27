@@ -19,7 +19,14 @@ public class Combinations {
     public static void main(String[] args) {
         // TODO code application logic here
     }
-
+    /**
+     * @param a the set of characters 
+     * @param k the current index of the character to get. Starts at 0
+     * @param length how many characters the combinations should be
+     * @param options the number of options 
+     * 
+     * Make sure the TreeSet combos is declared outside of this method
+     */
     public static void allCombos(char[] a, int k, int length, int options) {
         //make this TreeSet outside of method 
         TreeSet combos = new TreeSet();

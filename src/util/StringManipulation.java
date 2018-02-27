@@ -37,9 +37,15 @@ public class StringManipulation {
         return in.equals(reversed);
     }
 
-    //Takes every Nth letter of String in and puts it into a String.
-    //If the Nth letter index is greater than the String length, it subtracts
-    //the length from the index. 
+    
+    /**
+     * 
+     * @param in the String that will be manipulated
+     * @param indexGap how many indexes to skip when choosing the next letter
+     *Takes every Nth letter of String in and puts it into a String.
+     *If the Nth letter index is greater than the String length, it subtracts
+     *the length from the index till the index works. 
+     */
     public static String stringFromIndexGaps(String in, int indexGap) {
         String toReturn = "";
         int length = in.length();
