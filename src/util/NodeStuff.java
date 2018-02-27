@@ -30,26 +30,22 @@ public class NodeStuff {
             siblings.add(n);
         }
 
-        public int distTo(char n, ArrayList<Character> bl) {
+        public int distTo(char n, ArrayList<Character> blacklist) {
             if (name == n) {
                 return 0;
             }
-            bl.add(name);
+            blacklist.add(name);
             int min = Integer.MAX_VALUE - 4;
-            for (Node nod : siblings) {
-                //System.out.println(bl.contains(nod.name));
-                if (!bl.contains(nod.name)) {
-                    int cur = nod.distTo(n, (ArrayList<Character>) bl.clone());
+            for (Node bro : siblings) {
+                if (!blacklist.contains(bro.name)) {
+                    int cur = bro.distTo(n, (ArrayList<Character>) blacklist.clone());
                     if (cur < min) {
                         min = cur;
                     }
                 }
 
             }
-            min++;
-            //System.out.println(name + "'s closest dist to " + n + " is " + min);
-            return min;
-
+            return ++min;
         }
 
         @Override

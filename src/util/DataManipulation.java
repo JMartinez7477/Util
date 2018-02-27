@@ -20,6 +20,13 @@ public class DataManipulation {
         // TODO code application logic here
     }
     
+    /**
+     * 
+     * @param info      
+     * @param options   
+     * 
+     * @return a set the length of options, with the number of times each option occurs in the array
+     */
     public static int[] timesInArray(ArrayList<Integer> info, int[] options){
         int[] timesRepeated = new int[options.length];
         for (int num : info) {

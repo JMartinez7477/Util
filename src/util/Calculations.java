@@ -62,9 +62,15 @@ public class Calculations {
         double[] info = {m, b};
         return info;
     }
-
-    public static double distanceBetweenPoints(double x1, double y1, double x2, double y2) {
-        return Math.hypot(x2 - x1, y2 - y1);
+    
+    /*
+     * 
+     * @return maps the value val from the range x1 to y1, to x2 to y2
+     * Example: float value = map(110, 0, 100, -20, -10) = -9
+     */
+    public static double map(double val, double x1, double y1, double x2, double y2){
+        if(x2-x1 == 0)return 0;
+        return ((y2 - y1) / (x2 - x1)) * (val - x1) + y1;
     }
 
     public static double mean(double[] numbers) {
