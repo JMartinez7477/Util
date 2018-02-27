@@ -50,7 +50,7 @@ public class Calculations {
         return good;
     }
 
-    public static int lcm(int a, int b) {
+    public static int lcmHard(int a, int b) {
         int lcm = -1;
         int x = 0;
         int y = 0;
@@ -69,6 +69,36 @@ public class Calculations {
             }
         }
         return lcm;
+    }
+    
+    public static int lcm(int[] nums) {
+        int n = 1;
+        int min = nums[0];
+        for (int i : nums) {
+            if (i > min) {
+                min = i;
+            }
+        }
+        for (int i = 2; i <= min; i++) {
+            boolean hasmult = false;
+            for (int k = 0; k < nums.length; k++) {
+                if (nums[k] % i == 0) {
+                    nums[k] /= i;
+                    if (!hasmult) {
+                        n *= i;
+                        hasmult = true;
+                    }
+                }
+            }
+            if (hasmult) {
+                i = 2;
+            }
+        }
+        for (int i : nums) {
+            n *= i;
+        }
+        return n;
+
     }
     
     public static double[] findLine(double x1, double y1, double x2, double y2){
@@ -117,5 +147,15 @@ public class Calculations {
             }
         }
         return max-min;
+    }
+    
+    public static int limit(int val, int low, int high) {
+        if (val > high) {
+            return high;
+        }
+        if (val < low) {
+            return low;
+        }
+        return val;
     }
 }
